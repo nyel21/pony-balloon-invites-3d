@@ -1,6 +1,7 @@
 
 import React from 'react';
-import { Camera, Heart } from 'lucide-react';
+import { Camera, Heart, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from './ui/carousel';
 
 const PhotoGallery = () => {
   const photos = [
@@ -56,39 +57,55 @@ const PhotoGallery = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {photos.map((photo, index) => (
-            <div
-              key={photo.id}
-              className="group relative overflow-hidden rounded-2xl glass transform hover:scale-105 transition-all duration-500 hover:shadow-2xl perspective-1000"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className="aspect-square overflow-hidden">
-                <img
-                  src={photo.src}
-                  alt={photo.alt}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-              </div>
-              
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-4 left-4 right-4">
-                  <p className="text-white font-medium text-sm">{photo.caption}</p>
-                </div>
-              </div>
+        {/* Carousel */}
+        <div className="relative max-w-6xl mx-auto">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {photos.map((photo, index) => (
+                <CarouselItem key={photo.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                  <div
+                    className="group relative overflow-hidden rounded-2xl glass transform hover:scale-105 transition-all duration-500 hover:shadow-2xl perspective-1000"
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                  >
+                    <div className="aspect-square overflow-hidden">
+                      <img
+                        src={photo.src}
+                        alt={photo.alt}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                    </div>
+                    
+                    {/* Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="absolute bottom-4 left-4 right-4">
+                        <p className="text-white font-medium text-sm">{photo.caption}</p>
+                      </div>
+                    </div>
 
-              {/* Decorative corner */}
-              <div className="absolute top-2 right-2 w-8 h-8 bg-gradient-to-br from-pony-400 to-pink-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <Heart className="w-4 h-4 text-white" />
-              </div>
-            </div>
-          ))}
+                    {/* Decorative corner */}
+                    <div className="absolute top-2 right-2 w-8 h-8 bg-gradient-to-br from-pony-400 to-pink-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <Heart className="w-4 h-4 text-white" />
+                    </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            
+            {/* Custom styled navigation buttons */}
+            <CarouselPrevious className="glass hover:glass border-pony-200 hover:border-pony-300 text-pony-600 hover:text-pony-700 -left-12 md:-left-16" />
+            <CarouselNext className="glass hover:glass border-balloon-200 hover:border-balloon-300 text-balloon-600 hover:text-balloon-700 -right-12 md:-right-16" />
+          </Carousel>
         </div>
 
         <div className="text-center mt-12">
           <div className="glass rounded-2xl p-6 max-w-md mx-auto">
-            <p className="text-gray-600 mb-4">More photos coming soon!</p>
+            <p className="text-gray-600 mb-4">Swipe or use arrows to see more photos!</p>
             <div className="flex justify-center space-x-2">
               <div className="w-3 h-3 bg-pony-400 rounded-full animate-bounce"></div>
               <div className="w-3 h-3 bg-balloon-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>

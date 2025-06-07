@@ -1,20 +1,50 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Navigation from '../components/Navigation';
 import HeroSection from '../components/HeroSection';
 import CountdownTimer from '../components/CountdownTimer';
 import EventProgram from '../components/EventProgram';
 import PhotoGallery from '../components/PhotoGallery';
 import LocationMap from '../components/LocationMap';
+import LoadingPage from '../components/LoadingPage';
+import AnimatedDivider from '../components/AnimatedDivider';
 
 const Index = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading time for the beautiful calligraphy effect
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 3500); // 3.5 seconds for a nice loading experience
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return <LoadingPage />;
+  }
+
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen scroll-smooth">
       <Navigation />
+      
       <HeroSection />
+      
+      <AnimatedDivider variant="rainbow" />
+      
       <CountdownTimer />
+      
+      <AnimatedDivider variant="pony" />
+      
       <EventProgram />
+      
+      <AnimatedDivider variant="balloon" />
+      
       <PhotoGallery />
+      
+      <AnimatedDivider variant="rainbow" />
+      
       <LocationMap />
       
       {/* Footer */}

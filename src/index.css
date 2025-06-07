@@ -144,3 +144,115 @@ html {
   background-clip: text;
   animation: rainbow 3s ease-in-out infinite;
 }
+
+/* Calligraphy text styling */
+.calligraphy-text {
+  font-family: 'Brush Script MT', 'Lucida Handwriting', cursive;
+  background: linear-gradient(45deg, #8b5a96, #f366ff, #45b7d1, #feca57, #ff6b6b);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: rainbow 4s ease-in-out infinite, calligraphyGlow 3s ease-in-out infinite;
+  text-shadow: 0 0 30px rgba(139, 90, 150, 0.3);
+  letter-spacing: 2px;
+  line-height: 1.1;
+}
+
+/* Enhanced animations */
+@keyframes rainbow {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes calligraphyGlow {
+  0%, 100% { filter: drop-shadow(0 0 10px rgba(139, 90, 150, 0.3)); }
+  50% { filter: drop-shadow(0 0 20px rgba(243, 102, 255, 0.5)); }
+}
+
+@keyframes sparkle {
+  0%, 100% { 
+    opacity: 0.3; 
+    transform: scale(0.8) rotate(0deg); 
+  }
+  50% { 
+    opacity: 1; 
+    transform: scale(1.2) rotate(180deg); 
+  }
+}
+
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg); 
+  }
+  50% { 
+    transform: translateY(-10px) rotate(5deg); 
+  }
+}
+
+@keyframes bounce-soft {
+  0%, 100% { 
+    transform: translateY(0px) scale(1); 
+  }
+  50% { 
+    transform: translateY(-5px) scale(1.05); 
+  }
+}
+
+@keyframes pulse-gentle {
+  0%, 100% { 
+    opacity: 0.7; 
+    transform: scale(1); 
+  }
+  50% { 
+    opacity: 1; 
+    transform: scale(1.1); 
+  }
+}
+
+/* Apply animations */
+.animate-sparkle {
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-bounce-soft {
+  animation: bounce-soft 2s ease-in-out infinite;
+}
+
+.animate-pulse-gentle {
+  animation: pulse-gentle 2s ease-in-out infinite;
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scrolling enhancements */
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced carousel styling */
+.carousel-container {
+  scroll-snap-type: x mandatory;
+}
+
+.carousel-item {
+  scroll-snap-align: start;
+}
