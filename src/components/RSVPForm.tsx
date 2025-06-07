@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { X, Send, Users, MessageCircle, User } from 'lucide-react';
 import { toast } from 'sonner';
+import { supabase } from '@/integrations/supabase/client';
 
 interface RSVPFormProps {
   isOpen: boolean;
@@ -14,21 +15,43 @@ const RSVPForm: React.FC<RSVPFormProps> = ({ isOpen, onClose }) => {
     guests: '1',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name.trim()) {
       toast.error('Please enter your name');
       return;
     }
     
-    // Here you would typically send the RSVP data to your backend
-    console.log('RSVP submitted:', formData);
-    toast.success('Thank you for your RSVP! We can\'t wait to celebrate with you! 🎉');
+    setIsSubmitting(true);
     
-    // Reset form and close modal
-    setFormData({ name: '', guests: '1', message: '' });
-    onClose();
+    try {
+      const { error } = await supabase
+        .from('rsvps')
+        .insert({
+          name: formData.name.trim(),
+          guests: parseInt(formData.guests),
+          message: formData.message.trim() || null
+        });
+
+      if (error) {
+        console.error('RSVP submission error:', error);
+        toast.error('Sorry, there was an error submitting your RSVP. Please try again.');
+        return;
+      }
+
+      toast.success('Thank you for your RSVP! We can\'t wait to celebrate with you! 🎉');
+      
+      // Reset form and close modal
+      setFormData({ name: '', guests: '1', message: '' });
+      onClose();
+    } catch (error) {
+      console.error('Unexpected error:', error);
+      toast.error('Sorry, there was an unexpected error. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -47,6 +70,7 @@ const RSVPForm: React.FC<RSVPFormProps> = ({ isOpen, onClose }) => {
           <button
             onClick={onClose}
             className="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-200 transition-colors"
+            disabled={isSubmitting}
           >
             <X className="w-6 h-6" />
           </button>
@@ -75,6 +99,7 @@ const RSVPForm: React.FC<RSVPFormProps> = ({ isOpen, onClose }) => {
                 className="w-full p-4 glass rounded-xl border border-gray-200 focus:border-pony-500 focus:outline-none transition-colors"
                 placeholder="Enter your full name"
                 required
+                disabled={isSubmitting}
               />
             </div>
 
@@ -89,6 +114,7 @@ const RSVPForm: React.FC<RSVPFormProps> = ({ isOpen, onClose }) => {
                 value={formData.guests}
                 onChange={handleChange}
                 className="w-full p-4 glass rounded-xl border border-gray-200 focus:border-balloon-500 focus:outline-none transition-colors"
+                disabled={isSubmitting}
               >
                 {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(num => (
                   <option key={num} value={num.toString()}>
@@ -111,16 +137,18 @@ const RSVPForm: React.FC<RSVPFormProps> = ({ isOpen, onClose }) => {
                 rows={4}
                 className="w-full p-4 glass rounded-xl border border-gray-200 focus:border-teddy-500 focus:outline-none transition-colors resize-none"
                 placeholder="Share your excitement or special wishes for Dos and Taya..."
+                disabled={isSubmitting}
               />
             </div>
 
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full bg-gradient-to-r from-pony-500 via-balloon-500 to-teddy-500 hover:from-pony-600 hover:via-balloon-600 hover:to-teddy-600 text-white p-4 rounded-xl font-bold text-lg transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2"
+              disabled={isSubmitting}
+              className="w-full bg-gradient-to-r from-pony-500 via-balloon-500 to-teddy-500 hover:from-pony-600 hover:via-balloon-600 hover:to-teddy-600 text-white p-4 rounded-xl font-bold text-lg transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
             >
               <Send className="w-5 h-5" />
-              <span>Send RSVP</span>
+              <span>{isSubmitting ? 'Sending...' : 'Send RSVP'}</span>
             </button>
           </form>
 

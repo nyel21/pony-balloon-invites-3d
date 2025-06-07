@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Navigation from '../components/Navigation';
 import HeroSection from '../components/HeroSection';
 import CountdownTimer from '../components/CountdownTimer';
@@ -63,6 +64,14 @@ const Index = () => {
             <div className="w-4 h-4 bg-white rounded-full animate-bounce"></div>
             <div className="w-4 h-4 bg-white rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
             <div className="w-4 h-4 bg-white rounded-full animate-bounce" style={{ animationDelay: '0.4s' }}></div>
+          </div>
+          <div className="mt-6">
+            <Link 
+              to="/admin" 
+              className="text-white/70 hover:text-white text-sm underline transition-colors"
+            >
+              Admin Portal
+            </Link>
           </div>
         </div>
       </footer>
