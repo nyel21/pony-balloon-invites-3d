@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Heart, Star, Balloon } from 'lucide-react';
+import { Heart, Star, PartyPopper } from 'lucide-react';
 
 const Navigation = () => {
   const scrollToSection = (id: string) => {
@@ -15,7 +15,7 @@ const Navigation = () => {
             <div className="flex items-center space-x-1">
               <Star className="w-6 h-6 text-pony-500 animate-sparkle" />
               <Heart className="w-6 h-6 text-teddy-500 animate-pulse-gentle" />
-              <Balloon className="w-6 h-6 text-balloon-500 animate-bounce-soft" />
+              <PartyPopper className="w-6 h-6 text-balloon-500 animate-bounce-soft" />
             </div>
             <span className="text-lg font-bold rainbow-text">
               Dos & Taya's Celebration
