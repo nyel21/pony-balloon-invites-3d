@@ -1,7 +1,7 @@
-
 import React, { useState } from 'react';
 import { X, Send, Users, MessageCircle, User } from 'lucide-react';
 import { toast } from 'sonner';
+import { useNavigate } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 
 interface RSVPFormProps {
@@ -16,6 +16,7 @@ const RSVPForm: React.FC<RSVPFormProps> = ({ isOpen, onClose }) => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -46,6 +47,9 @@ const RSVPForm: React.FC<RSVPFormProps> = ({ isOpen, onClose }) => {
       // Reset form and close modal
       setFormData({ name: '', guests: '1', message: '' });
       onClose();
+      
+      // Navigate to thank you page with the user's name
+      navigate(`/thank-you?name=${encodeURIComponent(formData.name.trim())}`);
     } catch (error) {
       console.error('Unexpected error:', error);
       toast.error('Sorry, there was an unexpected error. Please try again.');
