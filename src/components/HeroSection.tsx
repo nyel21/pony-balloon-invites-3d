@@ -89,11 +89,11 @@ const HeroSection = () => {
             A Magical Dual Celebration
           </p>
 
-          {/* Dual celebrants photos */}
-          <div className="mb-12 flex justify-center items-center gap-8 perspective-1000">
+          {/* Dual celebrants photos - Made bigger and more responsive */}
+          <div className="mb-12 flex flex-col md:flex-row justify-center items-center gap-6 md:gap-8 lg:gap-12 perspective-1000">
             {/* Taya's photo */}
             <div className="relative">
-              <div className="relative w-48 h-48 rounded-full overflow-hidden glass transform hover:scale-105 transition-transform duration-500 animate-pulse-gentle">
+              <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 rounded-full overflow-hidden glass transform hover:scale-105 transition-transform duration-500 animate-pulse-gentle">
                 <img 
                   src="https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=400&fit=crop&crop=face"
                   alt="Taya"
@@ -101,14 +101,14 @@ const HeroSection = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-pony-500/20 to-transparent"></div>
               </div>
-              <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-pony-500 to-pink-500 text-white px-4 py-1 rounded-full text-sm font-bold">
+              <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-pony-500 to-pink-500 text-white px-3 py-2 md:px-6 md:py-3 rounded-full text-sm md:text-base lg:text-lg font-bold whitespace-nowrap">
                 Taya - 4 Years Old
               </div>
             </div>
 
             {/* Dos' photo */}
             <div className="relative">
-              <div className="relative w-48 h-48 rounded-full overflow-hidden glass transform hover:scale-105 transition-transform duration-500 animate-pulse-gentle" style={{ animationDelay: '1s' }}>
+              <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 rounded-full overflow-hidden glass transform hover:scale-105 transition-transform duration-500 animate-pulse-gentle" style={{ animationDelay: '1s' }}>
                 <img 
                   src="https://images.unsplash.com/photo-1535268647677-300dbf3d78d1?w=400&h=400&fit=crop&crop=face"
                   alt="Baby Dos"
@@ -116,7 +116,7 @@ const HeroSection = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-balloon-500/20 to-transparent"></div>
               </div>
-              <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-balloon-500 to-teddy-500 text-white px-4 py-1 rounded-full text-sm font-bold">
+              <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-balloon-500 to-teddy-500 text-white px-3 py-2 md:px-6 md:py-3 rounded-full text-sm md:text-base lg:text-lg font-bold whitespace-nowrap">
                 Baby Dos - Dedication
               </div>
             </div>
