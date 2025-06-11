@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Calendar, Clock, MapPin } from 'lucide-react';
 import EventDetails from './EventDetails';
@@ -45,14 +46,40 @@ const HeroSection = () => {
           <div className="w-1/2 bg-gradient-to-bl from-teddy-100 via-balloon-100 to-blue-100 relative">
             {/* Teddy Bear & Hot Air Balloon Particles */}
             <div className="absolute inset-0">
-              {/* Hot air balloons - More balloons added */}
-              <div className="absolute top-8 right-8 text-3xl animate-float" style={{ animationDelay: '0s' }}>🎈</div>
+              {/* Hot air balloon images - replacing some emojis with actual hot air balloon */}
+              <div className="absolute top-8 right-8 w-16 h-16 animate-float" style={{ animationDelay: '0s' }}>
+                <img 
+                  src="/lovable-uploads/5dcbde28-165d-435a-a5f3-a5cc082964cf.png" 
+                  alt="Hot air balloon with teddy bear" 
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <div className="absolute top-20 right-32 w-12 h-12 animate-float" style={{ animationDelay: '1s' }}>
+                <img 
+                  src="/lovable-uploads/5dcbde28-165d-435a-a5f3-a5cc082964cf.png" 
+                  alt="Hot air balloon with teddy bear" 
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <div className="absolute top-36 right-28 w-14 h-14 animate-float" style={{ animationDelay: '2s' }}>
+                <img 
+                  src="/lovable-uploads/5dcbde28-165d-435a-a5f3-a5cc082964cf.png" 
+                  alt="Hot air balloon with teddy bear" 
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <div className="absolute top-52 right-24 w-10 h-10 animate-float" style={{ animationDelay: '3s' }}>
+                <img 
+                  src="/lovable-uploads/5dcbde28-165d-435a-a5f3-a5cc082964cf.png" 
+                  alt="Hot air balloon with teddy bear" 
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              
+              {/* Some balloon emojis mixed in */}
               <div className="absolute top-12 right-20 text-2xl animate-float" style={{ animationDelay: '0.5s' }}>🎈</div>
-              <div className="absolute top-20 right-32 text-xl animate-float" style={{ animationDelay: '1s' }}>🎈</div>
               <div className="absolute top-28 right-12 text-2xl animate-float" style={{ animationDelay: '1.5s' }}>🎈</div>
-              <div className="absolute top-36 right-28 text-lg animate-float" style={{ animationDelay: '2s' }}>🎈</div>
               <div className="absolute top-44 right-8 text-xl animate-float" style={{ animationDelay: '2.5s' }}>🎈</div>
-              <div className="absolute top-52 right-24 text-sm animate-float" style={{ animationDelay: '3s' }}>🎈</div>
               <div className="absolute top-14 right-4 text-lg animate-float" style={{ animationDelay: '0.7s' }}>🎈</div>
               <div className="absolute top-38 right-16 text-xl animate-float" style={{ animationDelay: '2.3s' }}>🎈</div>
               <div className="absolute top-26 right-6 text-sm animate-float" style={{ animationDelay: '1.8s' }}>🎈</div>
