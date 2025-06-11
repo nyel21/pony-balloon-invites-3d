@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Calendar, Clock, MapPin } from 'lucide-react';
 import EventDetails from './EventDetails';
@@ -46,10 +45,17 @@ const HeroSection = () => {
           <div className="w-1/2 bg-gradient-to-bl from-teddy-100 via-balloon-100 to-blue-100 relative">
             {/* Teddy Bear & Hot Air Balloon Particles */}
             <div className="absolute inset-0">
-              {/* Hot air balloons */}
-              <div className="absolute top-12 right-10 text-2xl animate-float" style={{ animationDelay: '0.5s' }}>🎈</div>
-              <div className="absolute top-28 right-20 text-xl animate-float" style={{ animationDelay: '1.5s' }}>🎈</div>
-              <div className="absolute top-44 right-8 text-lg animate-float" style={{ animationDelay: '2.5s' }}>🎈</div>
+              {/* Hot air balloons - More balloons added */}
+              <div className="absolute top-8 right-8 text-3xl animate-float" style={{ animationDelay: '0s' }}>🎈</div>
+              <div className="absolute top-12 right-20 text-2xl animate-float" style={{ animationDelay: '0.5s' }}>🎈</div>
+              <div className="absolute top-20 right-32 text-xl animate-float" style={{ animationDelay: '1s' }}>🎈</div>
+              <div className="absolute top-28 right-12 text-2xl animate-float" style={{ animationDelay: '1.5s' }}>🎈</div>
+              <div className="absolute top-36 right-28 text-lg animate-float" style={{ animationDelay: '2s' }}>🎈</div>
+              <div className="absolute top-44 right-8 text-xl animate-float" style={{ animationDelay: '2.5s' }}>🎈</div>
+              <div className="absolute top-52 right-24 text-sm animate-float" style={{ animationDelay: '3s' }}>🎈</div>
+              <div className="absolute top-14 right-4 text-lg animate-float" style={{ animationDelay: '0.7s' }}>🎈</div>
+              <div className="absolute top-38 right-16 text-xl animate-float" style={{ animationDelay: '2.3s' }}>🎈</div>
+              <div className="absolute top-26 right-6 text-sm animate-float" style={{ animationDelay: '1.8s' }}>🎈</div>
               
               {/* Teddy bears */}
               <div className="absolute top-16 right-24 text-xl animate-bounce-soft" style={{ animationDelay: '1s' }}>🧸</div>
