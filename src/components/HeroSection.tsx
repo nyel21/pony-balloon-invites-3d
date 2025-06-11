@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Calendar, Clock, MapPin } from 'lucide-react';
 import EventDetails from './EventDetails';
@@ -31,6 +30,12 @@ const HeroSection = () => {
               <div className="absolute top-16 left-24 text-xl animate-bounce-soft" style={{ animationDelay: '1s' }}>🦄</div>
               <div className="absolute top-44 left-28 text-lg animate-bounce-soft" style={{ animationDelay: '2.5s' }}>🐴</div>
               
+              {/* Additional ponies near the profile picture area */}
+              <div className="absolute bottom-32 left-12 text-2xl animate-bounce-soft" style={{ animationDelay: '0.8s' }}>🐴</div>
+              <div className="absolute bottom-24 left-32 text-xl animate-bounce-soft" style={{ animationDelay: '1.8s' }}>🦄</div>
+              <div className="absolute bottom-40 left-8 text-lg animate-bounce-soft" style={{ animationDelay: '2.8s' }}>🐴</div>
+              <div className="absolute bottom-16 left-20 text-xl animate-bounce-soft" style={{ animationDelay: '0.3s' }}>🦄</div>
+              
               {/* Heart elements */}
               <div className="absolute top-36 left-6 text-lg animate-pulse-gentle" style={{ animationDelay: '0.8s' }}>💖</div>
               <div className="absolute top-52 left-24 text-sm animate-pulse-gentle" style={{ animationDelay: '1.8s' }}>💕</div>
@@ -46,37 +51,37 @@ const HeroSection = () => {
           <div className="w-1/2 bg-gradient-to-bl from-teddy-100 via-balloon-100 to-blue-100 relative">
             {/* Teddy Bear & Hot Air Balloon Particles */}
             <div className="absolute inset-0">
-              {/* Hot air balloon images - replacing some emojis with actual hot air balloon */}
-              <div className="absolute top-8 right-8 w-16 h-16 animate-float" style={{ animationDelay: '0s' }}>
+              {/* Hot air balloon images - positioned lower near profile picture */}
+              <div className="absolute bottom-32 right-8 w-16 h-16 animate-float" style={{ animationDelay: '0s' }}>
                 <img 
-                  src="/lovable-uploads/5dcbde28-165d-435a-a5f3-a5cc082964cf.png" 
+                  src="/lovable-uploads/f081b9e0-173d-42b4-8f36-25df7700a043.png" 
                   alt="Hot air balloon with teddy bear" 
                   className="w-full h-full object-contain"
                 />
               </div>
-              <div className="absolute top-20 right-32 w-12 h-12 animate-float" style={{ animationDelay: '1s' }}>
+              <div className="absolute bottom-24 right-32 w-14 h-14 animate-float" style={{ animationDelay: '1s' }}>
                 <img 
-                  src="/lovable-uploads/5dcbde28-165d-435a-a5f3-a5cc082964cf.png" 
+                  src="/lovable-uploads/f081b9e0-173d-42b4-8f36-25df7700a043.png" 
                   alt="Hot air balloon with teddy bear" 
                   className="w-full h-full object-contain"
                 />
               </div>
-              <div className="absolute top-36 right-28 w-14 h-14 animate-float" style={{ animationDelay: '2s' }}>
+              <div className="absolute bottom-40 right-28 w-12 h-12 animate-float" style={{ animationDelay: '2s' }}>
                 <img 
-                  src="/lovable-uploads/5dcbde28-165d-435a-a5f3-a5cc082964cf.png" 
+                  src="/lovable-uploads/f081b9e0-173d-42b4-8f36-25df7700a043.png" 
                   alt="Hot air balloon with teddy bear" 
                   className="w-full h-full object-contain"
                 />
               </div>
-              <div className="absolute top-52 right-24 w-10 h-10 animate-float" style={{ animationDelay: '3s' }}>
+              <div className="absolute bottom-16 right-24 w-18 h-18 animate-float" style={{ animationDelay: '3s' }}>
                 <img 
-                  src="/lovable-uploads/5dcbde28-165d-435a-a5f3-a5cc082964cf.png" 
+                  src="/lovable-uploads/f081b9e0-173d-42b4-8f36-25df7700a043.png" 
                   alt="Hot air balloon with teddy bear" 
                   className="w-full h-full object-contain"
                 />
               </div>
               
-              {/* Some balloon emojis mixed in */}
+              {/* Some balloon emojis mixed in - upper area */}
               <div className="absolute top-12 right-20 text-2xl animate-float" style={{ animationDelay: '0.5s' }}>🎈</div>
               <div className="absolute top-28 right-12 text-2xl animate-float" style={{ animationDelay: '1.5s' }}>🎈</div>
               <div className="absolute top-44 right-8 text-xl animate-float" style={{ animationDelay: '2.5s' }}>🎈</div>
