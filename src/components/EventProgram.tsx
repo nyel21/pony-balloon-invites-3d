@@ -1,48 +1,48 @@
 
 import React from 'react';
-import { Clock, Heart, Gift, Camera, Cake, Music } from 'lucide-react';
+import { Clock, Heart, Gift, Camera, Cake, Music, Utensils } from 'lucide-react';
 
 const EventProgram = () => {
   const programItems = [
     {
-      time: '3:30 PM',
-      title: 'Welcome & Arrival',
-      description: 'Guests arrive and settle in',
+      time: '3:45 PM',
+      title: 'Opening Prayer',
+      description: 'Blessing to start our celebration',
       icon: Heart,
       color: 'mcdonalds-red'
     },
     {
       time: '4:00 PM',
-      title: 'Dedication Ceremony',
-      description: 'Special blessing for baby Dos',
+      title: 'Dedication of Baby Dos',
+      description: 'Special blessing ceremony for baby Dos',
       icon: Gift,
       color: 'mcdonalds-yellow'
     },
     {
-      time: '4:30 PM',
-      title: 'Photo Session',
-      description: 'Capture precious memories',
+      time: '4:45 PM',
+      title: 'Picture Taking',
+      description: 'Capture precious memories together',
       icon: Camera,
       color: 'mcdonalds-red'
     },
     {
-      time: '5:00 PM',
-      title: 'Fun Games & Activities',
-      description: 'My Little Pony themed games',
+      time: '5:15 PM',
+      title: 'Celebration of Taya\'s Birthday',
+      description: 'Fun and games for everyone',
       icon: Music,
       color: 'mcdonalds-yellow'
     },
     {
-      time: '5:45 PM',
-      title: 'Birthday Cake Ceremony',
-      description: 'Taya blows out her candles',
-      icon: Cake,
+      time: '6:00 PM',
+      title: 'Eating Time',
+      description: 'Enjoy McDonald\'s delicious treats',
+      icon: Utensils,
       color: 'mcdonalds-red'
     },
     {
       time: '6:30 PM',
-      title: 'Thank You & Farewell',
-      description: 'Take home memories and treats',
+      title: 'Thank You and Farewell',
+      description: 'Take home wonderful memories',
       icon: Heart,
       color: 'mcdonalds-yellow'
     }
@@ -57,126 +57,107 @@ const EventProgram = () => {
   };
 
   return (
-    <section id="program" className="py-20 bg-gradient-to-b from-red-100 via-yellow-50 to-red-50 relative overflow-hidden">
-      {/* McDonald's themed background elements */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-10 left-10 text-6xl animate-bounce" style={{ animationDelay: '0s' }}>🍟</div>
-        <div className="absolute top-32 right-16 text-5xl animate-bounce" style={{ animationDelay: '1s' }}>🍔</div>
-        <div className="absolute bottom-20 left-20 text-4xl animate-bounce" style={{ animationDelay: '2s' }}>🥤</div>
-        <div className="absolute bottom-40 right-12 text-6xl animate-bounce" style={{ animationDelay: '0.5s' }}>🍟</div>
-        <div className="absolute top-20 right-32 text-4xl animate-bounce" style={{ animationDelay: '1.5s' }}>🍔</div>
-        <div className="absolute bottom-60 left-8 text-5xl animate-bounce" style={{ animationDelay: '2.5s' }}>🥤</div>
-        <div className="absolute top-40 left-1/3 text-5xl animate-bounce" style={{ animationDelay: '3s' }}>🍝</div>
-        <div className="absolute bottom-32 right-1/4 text-4xl animate-bounce" style={{ animationDelay: '3.5s' }}>🍗</div>
-      </div>
+    <section id="program" className="py-20 bg-red-600 relative overflow-hidden">
+      {/* McDonald's Logo Background */}
+      <div 
+        className="absolute inset-0 opacity-10 bg-center bg-no-repeat bg-contain"
+        style={{
+          backgroundImage: `url(/lovable-uploads/48f0f406-b639-446c-87ad-604f0ffc4c65.png)`,
+          backgroundSize: '300px 300px'
+        }}
+      ></div>
 
       <div className="max-w-6xl mx-auto px-4 relative z-10">
-        {/* McDonald's Header with Logo */}
+        {/* McDonald's Menu Header */}
         <div className="text-center mb-16">
-          <div className="flex justify-center items-center mb-6">
-            <div className="bg-red-600 text-yellow-400 rounded-full p-4 mr-4 shadow-lg">
-              <div className="text-4xl font-bold">M</div>
-            </div>
-            <div className="text-left">
-              <h2 className="text-4xl md:text-5xl font-bold text-red-600 mb-2">
-                McDo Event Program
-              </h2>
-              <div className="text-lg font-bold text-yellow-600 bg-red-600 px-4 py-1 rounded-full inline-block">
-                I'm lovin' it ❤️
-              </div>
-            </div>
-          </div>
-          <p className="text-xl text-red-700 font-bold">
-            Here's what we have planned for our special day at McDonald's!
-          </p>
-        </div>
-
-        {/* McDonald's Product Showcase */}
-        <div className="flex justify-center mb-12">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="glass rounded-2xl p-4 bg-red-600/20 border-2 border-red-300 text-center transform hover:scale-105 transition-all duration-300">
-              <div className="text-4xl mb-2">🍟</div>
-              <p className="text-red-700 font-bold text-sm">World Famous Fries</p>
-            </div>
-            <div className="glass rounded-2xl p-4 bg-yellow-400/20 border-2 border-yellow-300 text-center transform hover:scale-105 transition-all duration-300">
-              <div className="text-4xl mb-2">🍝</div>
-              <p className="text-red-700 font-bold text-sm">McSpaghetti</p>
-            </div>
-            <div className="glass rounded-2xl p-4 bg-red-600/20 border-2 border-red-300 text-center transform hover:scale-105 transition-all duration-300">
-              <div className="text-4xl mb-2">🍗</div>
-              <p className="text-red-700 font-bold text-sm">Crispy Chicken</p>
-            </div>
-            <div className="glass rounded-2xl p-4 bg-yellow-400/20 border-2 border-yellow-300 text-center transform hover:scale-105 transition-all duration-300">
-              <div className="text-4xl mb-2">🍔</div>
-              <p className="text-red-700 font-bold text-sm">Big Mac</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="max-w-4xl mx-auto">
-          <div className="relative">
-            {/* Timeline line - McDonald's colors */}
-            <div className="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 w-1 h-full bg-gradient-to-b from-red-400 via-yellow-400 to-red-400 rounded-full"></div>
-
-            {programItems.map((item, index) => (
-              <div
-                key={index}
-                className={`relative flex items-center mb-12 ${
-                  index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                }`}
-              >
-                {/* Timeline dot */}
-                <div
-                  className={`absolute left-6 md:left-1/2 transform md:-translate-x-1/2 w-6 h-6 rounded-full border-4 border-white shadow-lg z-10 ${getColorClasses(item.color)}`}
-                ></div>
-
-                {/* Content card */}
-                <div
-                  className={`ml-20 md:ml-0 md:w-5/12 ${
-                    index % 2 === 0 ? 'md:mr-auto md:pr-8' : 'md:ml-auto md:pl-8'
-                  }`}
-                >
-                  <div className="glass rounded-2xl p-6 transform hover:scale-105 transition-all duration-300 hover:shadow-lg perspective-1000 border-2 border-yellow-200 bg-gradient-to-br from-white to-yellow-50">
-                    <div className="flex items-center space-x-3 mb-4">
-                      <div className={`p-3 rounded-full ${getColorClasses(item.color)}`}>
-                        <item.icon className="w-6 h-6" />
-                      </div>
-                      <div>
-                        <div className="flex items-center space-x-2">
-                          <Clock className="w-4 h-4 text-red-600" />
-                          <span className="text-sm font-bold text-red-700">{item.time}</span>
-                        </div>
-                        <h3 className="text-lg font-bold text-red-800">{item.title}</h3>
-                      </div>
-                      {/* Mini McDonald's logo */}
-                      <div className="ml-auto bg-red-600 text-yellow-400 rounded-full w-8 h-8 flex items-center justify-center text-xs font-bold">
-                        M
-                      </div>
-                    </div>
-                    <p className="text-gray-700 font-medium">{item.description}</p>
-                  </div>
+          <div className="bg-yellow-400 rounded-3xl p-8 mx-auto max-w-4xl shadow-2xl border-4 border-red-700">
+            <div className="flex justify-center items-center mb-6">
+              <img 
+                src="/lovable-uploads/48f0f406-b639-446c-87ad-604f0ffc4c65.png" 
+                alt="McDonald's Logo" 
+                className="w-16 h-16 mr-4"
+              />
+              <div className="text-left">
+                <h2 className="text-4xl md:text-5xl font-bold text-red-600 mb-2">
+                  Event Menu
+                </h2>
+                <div className="text-lg font-bold text-red-600 bg-white px-4 py-1 rounded-full inline-block border-2 border-red-600">
+                  Today's Special Program
                 </div>
               </div>
-            ))}
+            </div>
+            <p className="text-xl text-red-700 font-bold">
+              Dos' Dedication & Taya's 4th Birthday Celebration
+            </p>
           </div>
         </div>
 
+        {/* McDonald's Menu Style Program */}
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-white rounded-3xl p-8 shadow-2xl border-4 border-yellow-400">
+            <div className="bg-red-600 text-white text-center py-4 rounded-2xl mb-8">
+              <h3 className="text-3xl font-bold">Program Schedule</h3>
+              <p className="text-yellow-300 font-medium">July 26, 2025 • McDonald's Ulong Tubig</p>
+            </div>
+
+            <div className="grid gap-6">
+              {programItems.map((item, index) => (
+                <div
+                  key={index}
+                  className="bg-gradient-to-r from-yellow-50 to-red-50 rounded-2xl p-6 border-3 border-red-200 hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+                >
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-4">
+                      <div className={`p-3 rounded-full ${getColorClasses(item.color)} shadow-lg`}>
+                        <item.icon className="w-6 h-6" />
+                      </div>
+                      <div className="flex-1">
+                        <div className="flex items-center space-x-2 mb-1">
+                          <Clock className="w-4 h-4 text-red-600" />
+                          <span className="text-lg font-bold text-red-700 bg-yellow-200 px-3 py-1 rounded-full">
+                            {item.time}
+                          </span>
+                        </div>
+                        <h3 className="text-xl font-bold text-red-800 mb-1">{item.title}</h3>
+                        <p className="text-gray-700 font-medium">{item.description}</p>
+                      </div>
+                    </div>
+                    <div className="bg-red-600 text-yellow-400 rounded-full w-12 h-12 flex items-center justify-center text-lg font-bold shadow-lg">
+                      M
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* McDonald's Footer Notes */}
         <div className="text-center mt-16">
-          <div className="glass rounded-2xl p-8 max-w-2xl mx-auto border-2 border-yellow-300 bg-gradient-to-r from-red-50 to-yellow-50">
-            <div className="flex justify-center items-center mb-4">
-              <div className="bg-red-600 text-yellow-400 rounded-full p-2 mr-3">
-                <div className="text-lg font-bold">M</div>
+          <div className="bg-yellow-400 rounded-3xl p-8 max-w-3xl mx-auto border-4 border-red-700 shadow-2xl">
+            <div className="flex justify-center items-center mb-6">
+              <img 
+                src="/lovable-uploads/48f0f406-b639-446c-87ad-604f0ffc4c65.png" 
+                alt="McDonald's Logo" 
+                className="w-12 h-12 mr-3"
+              />
+              <h3 className="text-3xl font-bold text-red-800">Special Notes</h3>
+            </div>
+            <div className="grid md:grid-cols-2 gap-4 text-red-700 font-bold text-lg">
+              <div className="bg-white p-4 rounded-xl border-2 border-red-600">
+                📸 Professional photographer available
               </div>
-              <h3 className="text-2xl font-bold text-red-800">McDo Special Notes</h3>
+              <div className="bg-white p-4 rounded-xl border-2 border-red-600">
+                🎁 Party favors for all guests
+              </div>
+              <div className="bg-white p-4 rounded-xl border-2 border-red-600">
+                🍽️ McDonald's treats will be served
+              </div>
+              <div className="bg-white p-4 rounded-xl border-2 border-red-600">
+                👶 Child-friendly celebration
+              </div>
             </div>
-            <div className="space-y-3 text-red-700 font-medium">
-              <p>📸 Professional photographer will be present</p>
-              <p>🎁 Giveaways and party favors for all guests</p>
-              <p>🍽️ McDonald's treats and Happy Meals will be served</p>
-              <p>👶 Child-friendly activities in the play area</p>
-              <p>🍟 Special McDo menu for our celebration</p>
-            </div>
-            <div className="mt-6 text-yellow-600 bg-red-600 px-4 py-2 rounded-full inline-block font-bold">
+            <div className="mt-8 text-white bg-red-600 px-8 py-4 rounded-full inline-block font-bold text-xl shadow-lg">
               Ba da ba ba ba... I'm lovin' it! 🎉
             </div>
           </div>
