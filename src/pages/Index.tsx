@@ -57,10 +57,27 @@ const Index = () => {
           <p className="text-lg mb-6">
             Dos' Dedication & Taya's 4th Birthday
           </p>
-          <p className="text-sm opacity-80">
+          <p className="text-sm opacity-80 mb-8">
             July 26, 2025 • McDonald's Ulong Tubig • 3:30-6:30 PM
           </p>
-          <div className="mt-8 flex justify-center space-x-4">
+          
+          {/* WhatsApp Call to Action */}
+          <div className="mb-8 p-6 bg-white/10 rounded-2xl max-w-md mx-auto backdrop-blur-sm">
+            <p className="text-lg font-medium mb-4">
+              Wanna have this invitation too? Just knock on my digital door 🚪
+            </p>
+            <a 
+              href="https://wa.me/639276409971" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-6 py-3 bg-green-500 hover:bg-green-600 text-white font-bold rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+            >
+              <span className="mr-2">💬</span>
+              WhatsApp Me: 09276409971
+            </a>
+          </div>
+          
+          <div className="flex justify-center space-x-4">
             <div className="w-4 h-4 bg-white rounded-full animate-bounce"></div>
             <div className="w-4 h-4 bg-white rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
             <div className="w-4 h-4 bg-white rounded-full animate-bounce" style={{ animationDelay: '0.4s' }}></div>

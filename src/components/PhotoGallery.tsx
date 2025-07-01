@@ -8,38 +8,32 @@ const PhotoGallery = () => {
     {
       id: 1,
       src: 'https://images.unsplash.com/photo-1535268647677-300dbf3d78d1?w=600&h=600&fit=crop',
-      alt: 'Taya enjoying her pony toys',
-      caption: 'Taya with her favorite pony'
+      alt: 'Taya enjoying her pony toys'
     },
     {
       id: 2,
       src: 'https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=600&h=600&fit=crop',
-      alt: 'Baby Dos sleeping peacefully',
-      caption: 'Sweet dreams, little Dos'
+      alt: 'Baby Dos sleeping peacefully'
     },
     {
       id: 3,
       src: 'https://images.unsplash.com/photo-1472396961693-142e6e269027?w=600&h=600&fit=crop',
-      alt: 'Taya and Dos together',
-      caption: 'Big sister and little brother'
+      alt: 'Taya and Dos together'
     },
     {
       id: 4,
       src: 'https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?w=600&h=600&fit=crop',
-      alt: 'Family moment',
-      caption: 'Precious family moments'
+      alt: 'Family moment'
     },
     {
       id: 5,
       src: 'https://images.unsplash.com/photo-1498936178812-4b2e558d2937?w=600&h=600&fit=crop',
-      alt: 'Taya playing',
-      caption: 'Taya having fun'
+      alt: 'Taya playing'
     },
     {
       id: 6,
       src: 'https://images.unsplash.com/photo-1535268647677-300dbf3d78d1?w=600&h=600&fit=crop',
-      alt: 'Baby Dos smiling',
-      caption: 'Dos\' precious smile'
+      alt: 'Baby Dos smiling'
     }
   ];
 
@@ -79,13 +73,6 @@ const PhotoGallery = () => {
                         alt={photo.alt}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                       />
-                    </div>
-                    
-                    {/* Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <div className="absolute bottom-4 left-4 right-4">
-                        <p className="text-white font-medium text-sm">{photo.caption}</p>
-                      </div>
                     </div>
 
                     {/* Decorative corner */}
